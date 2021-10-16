@@ -77,7 +77,11 @@ impl State {
                 entry_point: "main",
                 buffers: &[],
             },
-            fragment: Some(wgpu::FragmentState {
+            fragment: None,
+            /*
+             * It works if we add a FragmentState here:
+             *
+            Some(wgpu::FragmentState {
                 module: &shader,
                 entry_point: "main",
                 targets: &[wgpu::ColorTargetState {
@@ -89,6 +93,7 @@ impl State {
                     write_mask: wgpu::ColorWrites::ALL,
                 }],
             }),
+            */
             primitive: wgpu::PrimitiveState {
                 topology: wgpu::PrimitiveTopology::TriangleList,
                 strip_index_format: None,
